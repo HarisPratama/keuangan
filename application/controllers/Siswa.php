@@ -327,19 +327,6 @@ class Siswa extends MY_Controller
             $data['input'] = (object) $this->input->post(null, true);
         }
 
-        // if (!empty($_FILES) && $_FILES['image']['name'] !== '') {
-        //     $imageName  = url_title($data['input']->title, '-', true) . '-' . date('YmdHis');
-        //     $upload     = $this->siswa->uploadImage('image', $imageName);
-        //     if ($upload) {
-        //         if ($data['content']->image !== '') {
-        //             $this->siswa->deleteImage($data['content']->image);
-        //         }
-        //         $data['input']->image = $upload['file_name'];
-        //     } else {
-        //         redirect(base_url("siswa/edit/$id"));
-        //     }
-        // }
-
         if (!$this->siswa->validate()) {
             $data['title']          = 'Edit Siswa';
             $data['user'] = $this->db->get_where('user', ['email'
